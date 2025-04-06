@@ -243,6 +243,97 @@ abbr:hover::after {
     z-index: 10; 
 }
 
+q {
+    font-style: italic;
+    color: #666;
+    position: relative;
+    padding: 0 10px;
+}
+
+q::before, q::after {
+    content: "";
+    color: var(--accent-color);
+    font-size: 1.2em;
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: #666;
+    position: relative;
+}
+
+/*Footer accent */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; 
+    height: 3px;
+    background-color: var(--accent-color);
+
+}
+
+/*Print styles*/
+@media print {
+    body {
+        font-size: 12pt;
+        background: white;
+    }
+
+    #container {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    article img {
+        max-width: 500px;
+        margin: 0 auto 20px;
+        display: block; 
+        box-shadow:none; 
+    }
+
+    article::first-letter{
+        font-size: 3em;
+    }
+
+    @page {
+        margin: 2cm; 
+    }
+    strong::after, abbr:hover::after {
+        display: none;
+    }
+
+}
+
+/*Accessibility*/
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #ff0000; 
+        --secondary-color: #000000; 
+        --accent-color: #ffff00; 
+        --text-color: #000000; 
+    }
+    body {
+        background: white;
+    }
+
+    article p {
+        text-align: left; 
+
+    }
+}
+
+
+
+}
+
 
 
 
