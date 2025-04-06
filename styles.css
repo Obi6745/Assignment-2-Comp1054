@@ -149,6 +149,99 @@ article::first-letter {
 }
 
 /*Article Image */
+article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    border-radius: 3px;
+}
+
+article img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/*Subheading*/
+article h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 20px 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+/*Subheading Border*/
+article:h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--accent-color);
+}
+
+/*Paragraph*/
+article p {
+    margin-bottom: 20px; 
+    font-size: 1.1rem;
+    text-align: justify;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+}
+
+/*Typography*/
+strong {
+    color: var(--primary-color);
+    font-weight: bold;
+    position: relative;
+}
+
+strong::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+
+}
+
+strong:hover::after {
+    transform: scaleX(1);
+}
+
+em {
+    font-style: italic;
+    color: #666;
+}
+
+abbr { 
+    border-bottom: 1px dotted #666;
+    cursor: help;
+    position: relative;
+}
+
+abbr:hover::after {
+    content:attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dark-gray);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10; 
+}
 
 
 
