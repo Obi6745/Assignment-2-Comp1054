@@ -30,7 +30,7 @@ body {
     background: white;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20x;
+    padding: 20px;
     background-image: linear-gradient(to bottom, #fff, #f9f9f9);
 }
 
@@ -62,7 +62,7 @@ body {
     top: 20px; 
     right: 20px; 
     font-size: 1.2rem;
-    font-weight: 1.2rem;
+    font-weight: bold;
     color: var(--primary-color);
     opacity: 0.7;
 }   
@@ -91,7 +91,7 @@ header::after {
 /*Main Heading*/
 header h1 {
     font-size: 3rem;
-    color: var (--primary-color);
+    color: var(--primary-color);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -120,7 +120,7 @@ header h1:hover::after {
 }
 
 header p {
-    font-size: 1,1rem;
+    font-size: 1.1rem;
     color: #666;
 }
 
@@ -173,7 +173,7 @@ article h2 {
 }
 
 /*Subheading Border*/
-article:h2::before {
+article h2::before {
     content: "";
     position: absolute;
     left: 0;
@@ -330,9 +330,35 @@ footer::before {
     }
 }
 
+/*Dark Mode*/
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1e1e1e;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
 
+    article p, em, q {
+        color: #cccccc; 
+
+    }
+
+    header h1, article h2 {
+        color: #ff6b6b;
+    }
+
+    strong {
+        color: #ff6b6b;
+    }
+
+    footer { 
+        border-top-color: #444; 
+    }
 }
+
+
+
+
 
 
 
